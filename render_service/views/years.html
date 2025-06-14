@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Publication Years</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Books by Publication Year</h1>
+        <div class="years-list">
+            {{range .}}
+            <div class="year-card">
+                <h2>{{.Year}}</h2>
+                <div class="books-list">
+                    {{range .Books}}
+                    <div class="book-item">
+                        <h3>{{.Title}}</h3>
+                        <p>Author: {{.Author}}</p>
+                        <p>Edition: {{.Edition}}</p>
+                        <p>Pages: {{.Pages}}</p>
+                    </div>
+                    {{end}}
+                </div>
+            </div>
+            {{end}}
+        </div>
+        <a href="/" class="back-link">Back to Home</a>
+    </div>
+</body>
+</html> 

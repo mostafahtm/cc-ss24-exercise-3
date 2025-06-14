@@ -1,0 +1,87 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:7
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+  get:
+    build:
+      context: .
+      dockerfile: get_service/Dockerfile
+    container_name: get_service
+    depends_on:
+      - mongodb
+    environment:
+      - DATABASE_URI=mongodb://bookuser:bookpass@mongo:27017/exercise-3?authSource=exercise-3
+    expose:
+      - "3030"
+
+  post:
+    build:
+      context: .
+      dockerfile: post_service/Dockerfile
+    container_name: post_service
+    depends_on:
+      - mongodb
+    environment:
+      - DATABASE_URI=mongodb://bookuser:bookpass@mongo:27017/exercise-3?authSource=exercise-3
+    expose:
+      - "3030"
+
+  put:
+    build:
+      context: .
+      dockerfile: put_service/Dockerfile
+    container_name: put_service
+    depends_on:
+      - mongodb
+    environment:
+      - DATABASE_URI=mongodb://bookuser:bookpass@mongo:27017/exercise-3?authSource=exercise-3
+    expose:
+      - "3030"
+
+  delete:
+    build:
+      context: .
+      dockerfile: delete_service/Dockerfile
+    container_name: delete_service
+    depends_on:
+      - mongodb
+    environment:
+      - DATABASE_URI=mongodb://bookuser:bookpass@mongo:27017/exercise-3?authSource=exercise-3
+    expose:
+      - "3030"
+
+  render:
+    build:
+      context: .
+      dockerfile: render_service/Dockerfile
+    container_name: render_service
+    depends_on:
+      - mongodb
+    environment:
+      - DATABASE_URI=mongodb://bookuser:bookpass@mongo:27017/exercise-3?authSource=exercise-3
+    expose:
+      - "3030"
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    ports:
+      - "3030:80"
+    depends_on:
+      - get
+      - post
+      - put
+      - delete
+      - render
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+
+volumes:
+  mongo-data:

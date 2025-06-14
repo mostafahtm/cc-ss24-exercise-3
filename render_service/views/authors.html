@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Authors</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Book Authors</h1>
+        <div class="authors-list">
+            {{range .}}
+            <div class="author-card">
+                <h2>{{.Author}}</h2>
+                <p>Books by this author:</p>
+                <ul>
+                    {{range .Books}}
+                    <li>{{.}}</li>
+                    {{end}}
+                </ul>
+            </div>
+            {{end}}
+        </div>
+        <a href="/" class="back-link">Back to Home</a>
+    </div>
+</body>
+</html> 
