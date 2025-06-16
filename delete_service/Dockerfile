@@ -7,7 +7,8 @@ RUN go mod download
 
 COPY delete_service/ .
 
-RUN GOOS=linux GOARCH=amd64 go build -o delete_service .
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o delete_service .
+
 
 FROM alpine:latest
 

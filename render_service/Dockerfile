@@ -13,7 +13,8 @@ COPY render_service/views ./views
 COPY render_service/css ./css
 
 # Build the service binary
-RUN GOOS=linux GOARCH=amd64 go build -o render_service .
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o render_service .
+
 
 # Stage 2: Final image
 FROM alpine:latest

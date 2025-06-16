@@ -7,7 +7,8 @@ RUN go mod download
 
 COPY put_service/ .
 
-RUN GOOS=linux GOARCH=amd64 go build -o put_service .
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o put_service .
+
 
 FROM alpine:latest
 
