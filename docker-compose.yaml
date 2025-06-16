@@ -24,6 +24,7 @@ services:
     container_name: get_service
     depends_on:
       - mongodb
+    restart: always  
     environment:
       - DATABASE_URI=mongodb://bookuser:bookpass@mongo:27017/exercise-3?authSource=exercise-3
     expose:
@@ -36,6 +37,7 @@ services:
     container_name: post_service
     depends_on:
       - mongodb
+    restart: always
     environment:
       - DATABASE_URI=mongodb://bookuser:bookpass@mongo:27017/exercise-3?authSource=exercise-3
     expose:
@@ -48,6 +50,7 @@ services:
     container_name: put_service
     depends_on:
       - mongodb
+    restart: always
     environment:
       - DATABASE_URI=mongodb://bookuser:bookpass@mongo:27017/exercise-3?authSource=exercise-3
     expose:
@@ -60,6 +63,7 @@ services:
     container_name: delete_service
     depends_on:
       - mongodb
+    restart: always
     environment:
       - DATABASE_URI=mongodb://bookuser:bookpass@mongo:27017/exercise-3?authSource=exercise-3
     expose:
@@ -72,6 +76,7 @@ services:
     container_name: render_service
     depends_on:
       - mongodb
+    restart: always
     environment:
       - DATABASE_URI=mongodb://bookuser:bookpass@mongo:27017/exercise-3?authSource=exercise-3
     expose:
