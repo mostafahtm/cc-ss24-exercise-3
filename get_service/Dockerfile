@@ -4,7 +4,7 @@ FROM golang:1.22 AS builder
 WORKDIR /app
 
 # Copy go.mod and go.sum from root
-COPY ../go.mod ../go.sum ./
+COPY go.mod go.sum ./
 RUN go mod download
 
 # Copy only the service source

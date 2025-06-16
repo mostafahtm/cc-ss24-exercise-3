@@ -81,7 +81,7 @@ services:
       - delete
       - render
     volumes:
-      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
 
 volumes:
   mongo-data:
