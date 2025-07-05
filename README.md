@@ -1,4 +1,4 @@
-## Exercise 3 for Cloud Computing
+## Exercise 3 for Cloud Computing - Micro Services
 
 ### Summer Semester 2024
 
