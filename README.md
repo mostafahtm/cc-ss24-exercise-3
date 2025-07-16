@@ -1,8 +1,23 @@
 ## Exercise 3 for Cloud Computing - Micro Services
 
-### Summer Semester 2024
+### Summary of Project ###
+In this project, the monolithic BookStore web application is refactored into microservices using Docker Compose and NGINX. Each core functionality (GET, POST, PUT, DELETE, rendering) runs in its own container. An NGINX load balancer dynamically routes traffic based on HTTP methods, and all services communicate via a shared MongoDB instance.
 
-#### For more enquiries, please contact me
+Key Features:
+
+Microservices architecture with 5 decoupled containers
+
+Load balancing with NGINX based on HTTP request methods
+
+Multi-stage Docker builds for lightweight container images
+
+Environment-based MongoDB configuration
+
+Designed for cloud-native deployment and scalability
+
+This assignment deepens your understanding of container orchestration, service isolation, and traffic routing in modern cloud environments.
+
+#### Task Description ####
 
 Dear students,
 
