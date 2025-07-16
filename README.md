@@ -3,7 +3,7 @@
 ### Summary of Project ###
 In this project, the monolithic BookStore web application is refactored into microservices using Docker Compose and NGINX. Each core functionality (GET, POST, PUT, DELETE, rendering) runs in its own container. An NGINX load balancer dynamically routes traffic based on HTTP methods, and all services communicate via a shared MongoDB instance.
 
-## Key Features:
+### Key Features:
 
 Microservices architecture with 5 decoupled containers
 
@@ -17,7 +17,7 @@ Designed for cloud-native deployment and scalability
 
 This assignment deepens your understanding of container orchestration, service isolation, and traffic routing in modern cloud environments.
 
-#### Task Description ####
+### Task Description 
 
 Dear students,
 
